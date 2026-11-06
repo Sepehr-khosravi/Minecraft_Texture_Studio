@@ -1,0 +1,108 @@
+.app-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 14px 0 16px;
+  background: var(--surface-2);
+  border-bottom: 1px solid var(--border-subtle);
+  -webkit-app-region: drag;
+  position: relative;
+  z-index: 5;
+}
+.app-toolbar button,
+.app-toolbar a,
+.app-toolbar input,
+.app-toolbar .no-drag,
+.window-controls {
+  -webkit-app-region: no-drag;
+}
+.app-toolbar .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  letter-spacing: 0.1px;
+  color: var(--text-primary);
+  padding-right: 14px;
+  margin-right: 4px;
+  border-right: 1px solid var(--border-subtle);
+}
+.app-toolbar .brand-logo {
+  width: 26px;
+  height: 26px;
+  border-radius: 7px;
+  background: linear-gradient(140deg, var(--accent), #6ee0a6);
+  display: grid;
+  place-items: center;
+  color: #0e1013;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    0 4px 12px rgba(47, 191, 113, 0.25);
+}
+.toolbar-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  height: 32px;
+  padding: 0 12px;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-primary);
+  border: 1px solid var(--border-default);
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease,
+              color 120ms ease, transform 60ms ease;
+}
+.toolbar-btn:hover:not(:disabled) {
+  background: var(--surface-3);
+  border-color: var(--border-strong);
+}
+.toolbar-btn:active:not(:disabled) {
+  transform: translateY(1px);
+  background: var(--surface-4);
+}
+.toolbar-btn:disabled { opacity: 0.4; cursor: not-allowed; }
+.toolbar-btn.primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--accent-text);
+  box-shadow: 0 4px 14px rgba(47, 191, 113, 0.25);
+}
+.toolbar-btn.primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+  border-color: var(--accent-hover);
+}
+.toolbar-btn.primary:active:not(:disabled) {
+  background: var(--accent-active);
+  border-color: var(--accent-active);
+}
+.toolbar-spacer { flex: 1; }
+
+.window-controls {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: 8px;
+}
+.window-controls button {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 120ms ease, color 120ms ease;
+}
+.window-controls button:hover {
+  background: var(--surface-3);
+  color: var(--text-primary);
+}
+.window-controls button.close:hover {
+  background: var(--danger);
+  color: #fff;
+}

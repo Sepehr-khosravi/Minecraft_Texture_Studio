@@ -1,0 +1,176 @@
+.gallery {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex: 1;
+  min-height: 0;
+}
+.gallery-loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-secondary);
+  padding: 40px;
+  justify-content: center;
+}
+.spinner {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid var(--surface-3);
+  border-top-color: var(--accent);
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.gallery-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.gallery-filters {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+.gallery-filter {
+  height: 28px;
+  padding: 0 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border-default);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+}
+.gallery-filter:hover { background: var(--surface-3); color: var(--text-primary); }
+.gallery-filter.active {
+  background: var(--accent-soft);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+.gallery-search {
+  width: 200px;
+  height: 30px;
+  margin-left: auto;
+}
+.gallery-error {
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+  background: var(--danger-soft);
+  color: var(--danger);
+  font-size: 12px;
+  border: 1px solid rgba(229, 83, 75, 0.3);
+}
+.gallery-empty {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--text-tertiary);
+  text-align: center;
+  padding: 40px;
+}
+.gallery-empty p { margin: 0; font-size: 13px; color: var(--text-secondary); }
+.gallery-empty span { font-size: 11.5px; }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(88px, 1fr));
+  gap: 8px;
+  overflow: auto;
+  padding-right: 4px;
+  flex: 1;
+  min-height: 0;
+  align-content: start;
+}
+.texture-thumb {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 4px;
+  padding: 6px;
+  background: var(--surface-1);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: border-color 120ms ease, background 120ms ease, transform 60ms ease;
+  overflow: hidden;
+}
+.texture-thumb:hover {
+  background: var(--surface-2);
+  border-color: var(--border-strong);
+}
+.texture-thumb:active { transform: scale(0.98); }
+.texture-thumb.selected {
+  border-color: var(--accent);
+  background: var(--accent-soft);
+  color: var(--accent);
+}
+.texture-thumb-img {
+  aspect-ratio: 1 / 1;
+  background:
+    linear-gradient(45deg, var(--surface-3) 25%, transparent 25%, transparent 75%, var(--surface-3) 75%),
+    linear-gradient(45deg, var(--surface-3) 25%, transparent 25%, transparent 75%, var(--surface-3) 75%);
+  background-size: 12px 12px;
+  background-position: 0 0, 6px 6px;
+  background-color: var(--surface-2);
+  border-radius: var(--radius-sm);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  padding: 8px;
+}
+.texture-thumb-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}
+.texture-thumb-placeholder {
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--surface-3);
+}
+.texture-thumb-error {
+  color: var(--danger);
+  font-weight: 700;
+}
+.texture-thumb-name {
+  font-size: 10.5px;
+  font-weight: 500;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.texture-thumb-size {
+  font-size: 9.5px;
+  color: var(--text-tertiary);
+  font-family: var(--font-mono);
+}
+
+.gallery-drop-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(47, 191, 113, 0.1);
+  border: 2px dashed var(--accent);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: var(--accent);
+  font-weight: 500;
+  pointer-events: none;
+  z-index: 10;
+  backdrop-filter: blur(2px);
+}
+.gallery-drop-overlay p { margin: 0; font-size: 13px; }

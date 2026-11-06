@@ -1,0 +1,85 @@
+:root {
+  --surface-0: #0e1013;
+  --surface-1: #14171c;
+  --surface-2: #1a1e24;
+  --surface-3: #22272f;
+  --surface-4: #2b313a;
+
+  --text-primary:   #e6e8ec;
+  --text-secondary: #a4abb6;
+  --text-tertiary:  #6e7581;
+  --text-disabled:  #4a505a;
+  --text-inverse:   #0e1013;
+
+  --border-subtle:  rgba(255, 255, 255, 0.06);
+  --border-default: rgba(255, 255, 255, 0.09);
+  --border-strong:  rgba(255, 255, 255, 0.14);
+  --border-focus:   rgba(74, 222, 158, 0.55);
+
+  --accent:         #2fbf71;
+  --accent-hover:   #37d27f;
+  --accent-active:  #25a65f;
+  --accent-soft:    rgba(47, 191, 113, 0.14);
+  --accent-ring:    rgba(47, 191, 113, 0.32);
+  --accent-text:    #0e1013;
+
+  --info:           #4ab8e0;
+  --info-soft:      rgba(74, 184, 224, 0.14);
+
+  --danger:         #e5534b;
+  --danger-soft:    rgba(229, 83, 75, 0.14);
+  --warning:        #e0a526;
+  --warning-soft:   rgba(224, 165, 38, 0.14);
+  --success:        var(--accent);
+
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.55);
+
+  --toolbar-h: 52px;
+  --statusbar-h: 28px;
+  --sidebar-w: 288px;
+  --props-w: 320px;
+
+  --font-sans: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI',
+               Roboto, Helvetica, Arial, sans-serif;
+  --font-mono: 'SF Mono', 'JetBrains Mono', Menlo, Consolas, monospace;
+
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+
+html, body, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+}
+
+body {
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  color: var(--text-primary);
+  background: transparent;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb {
+  background: var(--surface-3);
+  border-radius: 6px;
+  border: 2px solid var(--surface-1);
+}
+::-webkit-scrollbar-thumb:hover { background: var(--surface-4); }
+
+::selection { background: var(--accent-soft); color: var(--text-primary); }

@@ -1,0 +1,1883 @@
+[
+  {
+    "id": "stone",
+    "name": "Stone",
+    "path": "assets/minecraft/textures/block/stone.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "granite",
+    "name": "Granite",
+    "path": "assets/minecraft/textures/block/granite.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "polished_granite",
+    "name": "Polished Granite",
+    "path": "assets/minecraft/textures/block/polished_granite.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "diorite",
+    "name": "Diorite",
+    "path": "assets/minecraft/textures/block/diorite.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "polished_diorite",
+    "name": "Polished Diorite",
+    "path": "assets/minecraft/textures/block/polished_diorite.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "andesite",
+    "name": "Andesite",
+    "path": "assets/minecraft/textures/block/andesite.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "polished_andesite",
+    "name": "Polished Andesite",
+    "path": "assets/minecraft/textures/block/polished_andesite.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "grass_block_top",
+    "name": "Grass Block (Top)",
+    "path": "assets/minecraft/textures/block/grass_block_top.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "grass_block_side",
+    "name": "Grass Block (Side)",
+    "path": "assets/minecraft/textures/block/grass_block_side.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "grass_block_side_overlay",
+    "name": "Grass Block (Overlay)",
+    "path": "assets/minecraft/textures/block/grass_block_side_overlay.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "grass_block_snow",
+    "name": "Grass Block (Snowy)",
+    "path": "assets/minecraft/textures/block/grass_block_snow.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "dirt",
+    "name": "Dirt",
+    "path": "assets/minecraft/textures/block/dirt.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "coarse_dirt",
+    "name": "Coarse Dirt",
+    "path": "assets/minecraft/textures/block/coarse_dirt.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "podzol_top",
+    "name": "Podzol (Top)",
+    "path": "assets/minecraft/textures/block/podzol_top.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "podzol_side",
+    "name": "Podzol (Side)",
+    "path": "assets/minecraft/textures/block/podzol_side.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "mycelium_top",
+    "name": "Mycelium (Top)",
+    "path": "assets/minecraft/textures/block/mycelium_top.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "mycelium_side",
+    "name": "Mycelium (Side)",
+    "path": "assets/minecraft/textures/block/mycelium_side.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "cobblestone",
+    "name": "Cobblestone",
+    "path": "assets/minecraft/textures/block/cobblestone.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "oak_planks",
+    "name": "Oak Planks",
+    "path": "assets/minecraft/textures/block/oak_planks.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "spruce_planks",
+    "name": "Spruce Planks",
+    "path": "assets/minecraft/textures/block/spruce_planks.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "birch_planks",
+    "name": "Birch Planks",
+    "path": "assets/minecraft/textures/block/birch_planks.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "jungle_planks",
+    "name": "Jungle Planks",
+    "path": "assets/minecraft/textures/block/jungle_planks.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "acacia_planks",
+    "name": "Acacia Planks",
+    "path": "assets/minecraft/textures/block/acacia_planks.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "dark_oak_planks",
+    "name": "Dark Oak Planks",
+    "path": "assets/minecraft/textures/block/dark_oak_planks.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "bedrock",
+    "name": "Bedrock",
+    "path": "assets/minecraft/textures/block/bedrock.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "sand",
+    "name": "Sand",
+    "path": "assets/minecraft/textures/block/sand.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "red_sand",
+    "name": "Red Sand",
+    "path": "assets/minecraft/textures/block/red_sand.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "gravel",
+    "name": "Gravel",
+    "path": "assets/minecraft/textures/block/gravel.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "gold_ore",
+    "name": "Gold Ore",
+    "path": "assets/minecraft/textures/block/gold_ore.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "iron_ore",
+    "name": "Iron Ore",
+    "path": "assets/minecraft/textures/block/iron_ore.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "coal_ore",
+    "name": "Coal Ore",
+    "path": "assets/minecraft/textures/block/coal_ore.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "oak_log",
+    "name": "Oak Log",
+    "path": "assets/minecraft/textures/block/oak_log.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "oak_log_top",
+    "name": "Oak Log (Top)",
+    "path": "assets/minecraft/textures/block/oak_log_top.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "spruce_log",
+    "name": "Spruce Log",
+    "path": "assets/minecraft/textures/block/spruce_log.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "spruce_log_top",
+    "name": "Spruce Log (Top)",
+    "path": "assets/minecraft/textures/block/spruce_log_top.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "birch_log",
+    "name": "Birch Log",
+    "path": "assets/minecraft/textures/block/birch_log.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "birch_log_top",
+    "name": "Birch Log (Top)",
+    "path": "assets/minecraft/textures/block/birch_log_top.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "jungle_log",
+    "name": "Jungle Log",
+    "path": "assets/minecraft/textures/block/jungle_log.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "jungle_log_top",
+    "name": "Jungle Log (Top)",
+    "path": "assets/minecraft/textures/block/jungle_log_top.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "acacia_log",
+    "name": "Acacia Log",
+    "path": "assets/minecraft/textures/block/acacia_log.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "acacia_log_top",
+    "name": "Acacia Log (Top)",
+    "path": "assets/minecraft/textures/block/acacia_log_top.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "dark_oak_log",
+    "name": "Dark Oak Log",
+    "path": "assets/minecraft/textures/block/dark_oak_log.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "dark_oak_log_top",
+    "name": "Dark Oak Log (Top)",
+    "path": "assets/minecraft/textures/block/dark_oak_log_top.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "oak_leaves",
+    "name": "Oak Leaves",
+    "path": "assets/minecraft/textures/block/oak_leaves.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "spruce_leaves",
+    "name": "Spruce Leaves",
+    "path": "assets/minecraft/textures/block/spruce_leaves.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "birch_leaves",
+    "name": "Birch Leaves",
+    "path": "assets/minecraft/textures/block/birch_leaves.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "jungle_leaves",
+    "name": "Jungle Leaves",
+    "path": "assets/minecraft/textures/block/jungle_leaves.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "acacia_leaves",
+    "name": "Acacia Leaves",
+    "path": "assets/minecraft/textures/block/acacia_leaves.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "dark_oak_leaves",
+    "name": "Dark Oak Leaves",
+    "path": "assets/minecraft/textures/block/dark_oak_leaves.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "glass",
+    "name": "Glass",
+    "path": "assets/minecraft/textures/block/glass.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "lapis_ore",
+    "name": "Lapis Ore",
+    "path": "assets/minecraft/textures/block/lapis_ore.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "lapis_block",
+    "name": "Lapis Block",
+    "path": "assets/minecraft/textures/block/lapis_block.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "sandstone",
+    "name": "Sandstone",
+    "path": "assets/minecraft/textures/block/sandstone.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "sandstone_top",
+    "name": "Sandstone (Top)",
+    "path": "assets/minecraft/textures/block/sandstone_top.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "sandstone_bottom",
+    "name": "Sandstone (Bottom)",
+    "path": "assets/minecraft/textures/block/sandstone_bottom.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "chiseled_sandstone",
+    "name": "Chiseled Sandstone",
+    "path": "assets/minecraft/textures/block/chiseled_sandstone.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "cut_sandstone",
+    "name": "Cut Sandstone",
+    "path": "assets/minecraft/textures/block/cut_sandstone.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "red_sandstone",
+    "name": "Red Sandstone",
+    "path": "assets/minecraft/textures/block/red_sandstone.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "red_sandstone_top",
+    "name": "Red Sandstone (Top)",
+    "path": "assets/minecraft/textures/block/red_sandstone_top.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "red_sandstone_bottom",
+    "name": "Red Sandstone (Bottom)",
+    "path": "assets/minecraft/textures/block/red_sandstone_bottom.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "chiseled_red_sandstone",
+    "name": "Chiseled Red Sandstone",
+    "path": "assets/minecraft/textures/block/chiseled_red_sandstone.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "cut_red_sandstone",
+    "name": "Cut Red Sandstone",
+    "path": "assets/minecraft/textures/block/cut_red_sandstone.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "dead_bush",
+    "name": "Dead Bush",
+    "path": "assets/minecraft/textures/block/dead_bush.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "grass",
+    "name": "Grass",
+    "path": "assets/minecraft/textures/block/grass.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "fern",
+    "name": "Fern",
+    "path": "assets/minecraft/textures/block/fern.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "short_grass",
+    "name": "Short Grass",
+    "path": "assets/minecraft/textures/block/short_grass.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "dandelion",
+    "name": "Dandelion",
+    "path": "assets/minecraft/textures/block/dandelion.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "poppy",
+    "name": "Poppy",
+    "path": "assets/minecraft/textures/block/poppy.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "blue_orchid",
+    "name": "Blue Orchid",
+    "path": "assets/minecraft/textures/block/blue_orchid.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "allium",
+    "name": "Allium",
+    "path": "assets/minecraft/textures/block/allium.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "azure_bluet",
+    "name": "Azure Bluet",
+    "path": "assets/minecraft/textures/block/azure_bluet.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "red_tulip",
+    "name": "Red Tulip",
+    "path": "assets/minecraft/textures/block/red_tulip.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "orange_tulip",
+    "name": "Orange Tulip",
+    "path": "assets/minecraft/textures/block/orange_tulip.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "white_tulip",
+    "name": "White Tulip",
+    "path": "assets/minecraft/textures/block/white_tulip.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "pink_tulip",
+    "name": "Pink Tulip",
+    "path": "assets/minecraft/textures/block/pink_tulip.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "oxeye_daisy",
+    "name": "Oxeye Daisy",
+    "path": "assets/minecraft/textures/block/oxeye_daisy.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "wheat_stage_0",
+    "name": "Wheat (Stage 0)",
+    "path": "assets/minecraft/textures/block/wheat_stage_0.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "wheat_stage_7",
+    "name": "Wheat (Stage 7)",
+    "path": "assets/minecraft/textures/block/wheat_stage_7.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "mushroom_red",
+    "name": "Red Mushroom",
+    "path": "assets/minecraft/textures/block/mushroom_red.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "mushroom_brown",
+    "name": "Brown Mushroom",
+    "path": "assets/minecraft/textures/block/mushroom_brown.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "gold_block",
+    "name": "Gold Block",
+    "path": "assets/minecraft/textures/block/gold_block.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "iron_block",
+    "name": "Iron Block",
+    "path": "assets/minecraft/textures/block/iron_block.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "bricks",
+    "name": "Bricks",
+    "path": "assets/minecraft/textures/block/bricks.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "tnt_top",
+    "name": "TNT (Top)",
+    "path": "assets/minecraft/textures/block/tnt_top.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "tnt_side",
+    "name": "TNT (Side)",
+    "path": "assets/minecraft/textures/block/tnt_side.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "tnt_bottom",
+    "name": "TNT (Bottom)",
+    "path": "assets/minecraft/textures/block/tnt_bottom.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "bookshelf",
+    "name": "Bookshelf",
+    "path": "assets/minecraft/textures/block/bookshelf.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "mossy_cobblestone",
+    "name": "Mossy Cobblestone",
+    "path": "assets/minecraft/textures/block/mossy_cobblestone.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "obsidian",
+    "name": "Obsidian",
+    "path": "assets/minecraft/textures/block/obsidian.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "torch",
+    "name": "Torch",
+    "path": "assets/minecraft/textures/block/torch.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "fire_0",
+    "name": "Fire (Frame 0)",
+    "path": "assets/minecraft/textures/block/fire_0.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "water_still",
+    "name": "Water (Still)",
+    "path": "assets/minecraft/textures/block/water_still.png",
+    "size": 16,
+    "category": "block",
+    "frames": 32
+  },
+  {
+    "id": "water_flow",
+    "name": "Water (Flowing)",
+    "path": "assets/minecraft/textures/block/water_flow.png",
+    "size": 16,
+    "category": "block",
+    "frames": 32
+  },
+  {
+    "id": "lava_still",
+    "name": "Lava (Still)",
+    "path": "assets/minecraft/textures/block/lava_still.png",
+    "size": 16,
+    "category": "block",
+    "frames": 32
+  },
+  {
+    "id": "lava_flow",
+    "name": "Lava (Flowing)",
+    "path": "assets/minecraft/textures/block/lava_flow.png",
+    "size": 16,
+    "category": "block",
+    "frames": 32
+  },
+  {
+    "id": "diamond_ore",
+    "name": "Diamond Ore",
+    "path": "assets/minecraft/textures/block/diamond_ore.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "diamond_block",
+    "name": "Diamond Block",
+    "path": "assets/minecraft/textures/block/diamond_block.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "crafting_table_top",
+    "name": "Crafting Table (Top)",
+    "path": "assets/minecraft/textures/block/crafting_table_top.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "crafting_table_side",
+    "name": "Crafting Table (Side)",
+    "path": "assets/minecraft/textures/block/crafting_table_side.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "crafting_table_front",
+    "name": "Crafting Table (Front)",
+    "path": "assets/minecraft/textures/block/crafting_table_front.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "furnace_front",
+    "name": "Furnace (Front)",
+    "path": "assets/minecraft/textures/block/furnace_front.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "furnace_side",
+    "name": "Furnace (Side)",
+    "path": "assets/minecraft/textures/block/furnace_side.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "furnace_top",
+    "name": "Furnace (Top)",
+    "path": "assets/minecraft/textures/block/furnace_top.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "redstone_ore",
+    "name": "Redstone Ore",
+    "path": "assets/minecraft/textures/block/redstone_ore.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "nether_portal",
+    "name": "Nether Portal",
+    "path": "assets/minecraft/textures/block/nether_portal.png",
+    "size": 16,
+    "category": "block",
+    "frames": 32
+  },
+  {
+    "id": "netherrack",
+    "name": "Netherrack",
+    "path": "assets/minecraft/textures/block/netherrack.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "soul_sand",
+    "name": "Soul Sand",
+    "path": "assets/minecraft/textures/block/soul_sand.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "glowstone",
+    "name": "Glowstone",
+    "path": "assets/minecraft/textures/block/glowstone.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "nether_bricks",
+    "name": "Nether Bricks",
+    "path": "assets/minecraft/textures/block/nether_bricks.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "end_stone",
+    "name": "End Stone",
+    "path": "assets/minecraft/textures/block/end_stone.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "emerald_ore",
+    "name": "Emerald Ore",
+    "path": "assets/minecraft/textures/block/emerald_ore.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "emerald_block",
+    "name": "Emerald Block",
+    "path": "assets/minecraft/textures/block/emerald_block.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "beacon",
+    "name": "Beacon",
+    "path": "assets/minecraft/textures/block/beacon.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "redstone_block",
+    "name": "Redstone Block",
+    "path": "assets/minecraft/textures/block/redstone_block.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "quartz_ore",
+    "name": "Quartz Ore",
+    "path": "assets/minecraft/textures/block/quartz_ore.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "quartz_block_side",
+    "name": "Quartz Block (Side)",
+    "path": "assets/minecraft/textures/block/quartz_block_side.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "quartz_block_top",
+    "name": "Quartz Block (Top)",
+    "path": "assets/minecraft/textures/block/quartz_block_top.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "quartz_block_bottom",
+    "name": "Quartz Block (Bottom)",
+    "path": "assets/minecraft/textures/block/quartz_block_bottom.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "chiseled_quartz_block",
+    "name": "Chiseled Quartz",
+    "path": "assets/minecraft/textures/block/chiseled_quartz_block.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "white_wool",
+    "name": "White Wool",
+    "path": "assets/minecraft/textures/block/white_wool.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "orange_wool",
+    "name": "Orange Wool",
+    "path": "assets/minecraft/textures/block/orange_wool.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "magenta_wool",
+    "name": "Magenta Wool",
+    "path": "assets/minecraft/textures/block/magenta_wool.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "light_blue_wool",
+    "name": "Light Blue Wool",
+    "path": "assets/minecraft/textures/block/light_blue_wool.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "yellow_wool",
+    "name": "Yellow Wool",
+    "path": "assets/minecraft/textures/block/yellow_wool.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "lime_wool",
+    "name": "Lime Wool",
+    "path": "assets/minecraft/textures/block/lime_wool.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "pink_wool",
+    "name": "Pink Wool",
+    "path": "assets/minecraft/textures/block/pink_wool.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "gray_wool",
+    "name": "Gray Wool",
+    "path": "assets/minecraft/textures/block/gray_wool.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "light_gray_wool",
+    "name": "Light Gray Wool",
+    "path": "assets/minecraft/textures/block/light_gray_wool.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "cyan_wool",
+    "name": "Cyan Wool",
+    "path": "assets/minecraft/textures/block/cyan_wool.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "purple_wool",
+    "name": "Purple Wool",
+    "path": "assets/minecraft/textures/block/purple_wool.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "blue_wool",
+    "name": "Blue Wool",
+    "path": "assets/minecraft/textures/block/blue_wool.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "brown_wool",
+    "name": "Brown Wool",
+    "path": "assets/minecraft/textures/block/brown_wool.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "green_wool",
+    "name": "Green Wool",
+    "path": "assets/minecraft/textures/block/green_wool.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "red_wool",
+    "name": "Red Wool",
+    "path": "assets/minecraft/textures/block/red_wool.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "black_wool",
+    "name": "Black Wool",
+    "path": "assets/minecraft/textures/block/black_wool.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "white_concrete",
+    "name": "White Concrete",
+    "path": "assets/minecraft/textures/block/white_concrete.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "orange_concrete",
+    "name": "Orange Concrete",
+    "path": "assets/minecraft/textures/block/orange_concrete.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "magenta_concrete",
+    "name": "Magenta Concrete",
+    "path": "assets/minecraft/textures/block/magenta_concrete.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "light_blue_concrete",
+    "name": "Light Blue Concrete",
+    "path": "assets/minecraft/textures/block/light_blue_concrete.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "yellow_concrete",
+    "name": "Yellow Concrete",
+    "path": "assets/minecraft/textures/block/yellow_concrete.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "lime_concrete",
+    "name": "Lime Concrete",
+    "path": "assets/minecraft/textures/block/lime_concrete.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "pink_concrete",
+    "name": "Pink Concrete",
+    "path": "assets/minecraft/textures/block/pink_concrete.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "gray_concrete",
+    "name": "Gray Concrete",
+    "path": "assets/minecraft/textures/block/gray_concrete.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "light_gray_concrete",
+    "name": "Light Gray Concrete",
+    "path": "assets/minecraft/textures/block/light_gray_concrete.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "cyan_concrete",
+    "name": "Cyan Concrete",
+    "path": "assets/minecraft/textures/block/cyan_concrete.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "purple_concrete",
+    "name": "Purple Concrete",
+    "path": "assets/minecraft/textures/block/purple_concrete.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "blue_concrete",
+    "name": "Blue Concrete",
+    "path": "assets/minecraft/textures/block/blue_concrete.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "brown_concrete",
+    "name": "Brown Concrete",
+    "path": "assets/minecraft/textures/block/brown_concrete.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "green_concrete",
+    "name": "Green Concrete",
+    "path": "assets/minecraft/textures/block/green_concrete.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "red_concrete",
+    "name": "Red Concrete",
+    "path": "assets/minecraft/textures/block/red_concrete.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "black_concrete",
+    "name": "Black Concrete",
+    "path": "assets/minecraft/textures/block/black_concrete.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "white_stained_glass",
+    "name": "White Stained Glass",
+    "path": "assets/minecraft/textures/block/white_stained_glass.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "orange_stained_glass",
+    "name": "Orange Stained Glass",
+    "path": "assets/minecraft/textures/block/orange_stained_glass.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "magenta_stained_glass",
+    "name": "Magenta Stained Glass",
+    "path": "assets/minecraft/textures/block/magenta_stained_glass.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "light_blue_stained_glass",
+    "name": "Light Blue Stained Glass",
+    "path": "assets/minecraft/textures/block/light_blue_stained_glass.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "yellow_stained_glass",
+    "name": "Yellow Stained Glass",
+    "path": "assets/minecraft/textures/block/yellow_stained_glass.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "lime_stained_glass",
+    "name": "Lime Stained Glass",
+    "path": "assets/minecraft/textures/block/lime_stained_glass.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "pink_stained_glass",
+    "name": "Pink Stained Glass",
+    "path": "assets/minecraft/textures/block/pink_stained_glass.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "gray_stained_glass",
+    "name": "Gray Stained Glass",
+    "path": "assets/minecraft/textures/block/gray_stained_glass.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "light_gray_stained_glass",
+    "name": "Light Gray Stained Glass",
+    "path": "assets/minecraft/textures/block/light_gray_stained_glass.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "cyan_stained_glass",
+    "name": "Cyan Stained Glass",
+    "path": "assets/minecraft/textures/block/cyan_stained_glass.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "purple_stained_glass",
+    "name": "Purple Stained Glass",
+    "path": "assets/minecraft/textures/block/purple_stained_glass.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "blue_stained_glass",
+    "name": "Blue Stained Glass",
+    "path": "assets/minecraft/textures/block/blue_stained_glass.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "brown_stained_glass",
+    "name": "Brown Stained Glass",
+    "path": "assets/minecraft/textures/block/brown_stained_glass.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "green_stained_glass",
+    "name": "Green Stained Glass",
+    "path": "assets/minecraft/textures/block/green_stained_glass.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "red_stained_glass",
+    "name": "Red Stained Glass",
+    "path": "assets/minecraft/textures/block/red_stained_glass.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "black_stained_glass",
+    "name": "Black Stained Glass",
+    "path": "assets/minecraft/textures/block/black_stained_glass.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "white_terracotta",
+    "name": "White Terracotta",
+    "path": "assets/minecraft/textures/block/white_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "orange_terracotta",
+    "name": "Orange Terracotta",
+    "path": "assets/minecraft/textures/block/orange_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "magenta_terracotta",
+    "name": "Magenta Terracotta",
+    "path": "assets/minecraft/textures/block/magenta_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "light_blue_terracotta",
+    "name": "Light Blue Terracotta",
+    "path": "assets/minecraft/textures/block/light_blue_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "yellow_terracotta",
+    "name": "Yellow Terracotta",
+    "path": "assets/minecraft/textures/block/yellow_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "lime_terracotta",
+    "name": "Lime Terracotta",
+    "path": "assets/minecraft/textures/block/lime_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "pink_terracotta",
+    "name": "Pink Terracotta",
+    "path": "assets/minecraft/textures/block/pink_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "gray_terracotta",
+    "name": "Gray Terracotta",
+    "path": "assets/minecraft/textures/block/gray_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "light_gray_terracotta",
+    "name": "Light Gray Terracotta",
+    "path": "assets/minecraft/textures/block/light_gray_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "cyan_terracotta",
+    "name": "Cyan Terracotta",
+    "path": "assets/minecraft/textures/block/cyan_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "purple_terracotta",
+    "name": "Purple Terracotta",
+    "path": "assets/minecraft/textures/block/purple_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "blue_terracotta",
+    "name": "Blue Terracotta",
+    "path": "assets/minecraft/textures/block/blue_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "brown_terracotta",
+    "name": "Brown Terracotta",
+    "path": "assets/minecraft/textures/block/brown_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "green_terracotta",
+    "name": "Green Terracotta",
+    "path": "assets/minecraft/textures/block/green_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "red_terracotta",
+    "name": "Red Terracotta",
+    "path": "assets/minecraft/textures/block/red_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "black_terracotta",
+    "name": "Black Terracotta",
+    "path": "assets/minecraft/textures/block/black_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "hay_block_top",
+    "name": "Hay Block (Top)",
+    "path": "assets/minecraft/textures/block/hay_block_top.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "hay_block_side",
+    "name": "Hay Block (Side)",
+    "path": "assets/minecraft/textures/block/hay_block_side.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "coal_block",
+    "name": "Coal Block",
+    "path": "assets/minecraft/textures/block/coal_block.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "packed_ice",
+    "name": "Packed Ice",
+    "path": "assets/minecraft/textures/block/packed_ice.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "ice",
+    "name": "Ice",
+    "path": "assets/minecraft/textures/block/ice.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "snow",
+    "name": "Snow",
+    "path": "assets/minecraft/textures/block/snow.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "cactus_top",
+    "name": "Cactus (Top)",
+    "path": "assets/minecraft/textures/block/cactus_top.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "cactus_side",
+    "name": "Cactus (Side)",
+    "path": "assets/minecraft/textures/block/cactus_side.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "cactus_bottom",
+    "name": "Cactus (Bottom)",
+    "path": "assets/minecraft/textures/block/cactus_bottom.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "clay",
+    "name": "Clay",
+    "path": "assets/minecraft/textures/block/clay.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "sugar_cane",
+    "name": "Sugar Cane",
+    "path": "assets/minecraft/textures/block/sugar_cane.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "jukebox_side",
+    "name": "Jukebox (Side)",
+    "path": "assets/minecraft/textures/block/jukebox_side.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "jukebox_top",
+    "name": "Jukebox (Top)",
+    "path": "assets/minecraft/textures/block/jukebox_top.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "oak_sapling",
+    "name": "Oak Sapling",
+    "path": "assets/minecraft/textures/block/oak_sapling.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "spruce_sapling",
+    "name": "Spruce Sapling",
+    "path": "assets/minecraft/textures/block/spruce_sapling.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "birch_sapling",
+    "name": "Birch Sapling",
+    "path": "assets/minecraft/textures/block/birch_sapling.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "jungle_sapling",
+    "name": "Jungle Sapling",
+    "path": "assets/minecraft/textures/block/jungle_sapling.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "acacia_sapling",
+    "name": "Acacia Sapling",
+    "path": "assets/minecraft/textures/block/acacia_sapling.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "dark_oak_sapling",
+    "name": "Dark Oak Sapling",
+    "path": "assets/minecraft/textures/block/dark_oak_sapling.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "oak_door_top",
+    "name": "Oak Door (Top)",
+    "path": "assets/minecraft/textures/block/oak_door_top.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "oak_door_bottom",
+    "name": "Oak Door (Bottom)",
+    "path": "assets/minecraft/textures/block/oak_door_bottom.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "iron_door_top",
+    "name": "Iron Door (Top)",
+    "path": "assets/minecraft/textures/block/iron_door_top.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "iron_door_bottom",
+    "name": "Iron Door (Bottom)",
+    "path": "assets/minecraft/textures/block/iron_door_bottom.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "ladder",
+    "name": "Ladder",
+    "path": "assets/minecraft/textures/block/ladder.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "rail",
+    "name": "Rail",
+    "path": "assets/minecraft/textures/block/rail.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "powered_rail",
+    "name": "Powered Rail",
+    "path": "assets/minecraft/textures/block/powered_rail.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "detector_rail",
+    "name": "Detector Rail",
+    "path": "assets/minecraft/textures/block/detector_rail.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "activator_rail",
+    "name": "Activator Rail",
+    "path": "assets/minecraft/textures/block/activator_rail.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "spawner",
+    "name": "Spawner",
+    "path": "assets/minecraft/textures/block/spawner.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "redstone_lamp_on",
+    "name": "Redstone Lamp (On)",
+    "path": "assets/minecraft/textures/block/redstone_lamp_on.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "redstone_lamp_off",
+    "name": "Redstone Lamp (Off)",
+    "path": "assets/minecraft/textures/block/redstone_lamp_off.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "glass_pane_top",
+    "name": "Glass Pane (Top)",
+    "path": "assets/minecraft/textures/block/glass_pane_top.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "melon_side",
+    "name": "Melon (Side)",
+    "path": "assets/minecraft/textures/block/melon_side.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "melon_top",
+    "name": "Melon (Top)",
+    "path": "assets/minecraft/textures/block/melon_top.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "pumpkin_side",
+    "name": "Pumpkin (Side)",
+    "path": "assets/minecraft/textures/block/pumpkin_side.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "pumpkin_top",
+    "name": "Pumpkin (Top)",
+    "path": "assets/minecraft/textures/block/pumpkin_top.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "pumpkin_face_on",
+    "name": "Pumpkin (Face)",
+    "path": "assets/minecraft/textures/block/pumpkin_face_on.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "carved_pumpkin",
+    "name": "Carved Pumpkin",
+    "path": "assets/minecraft/textures/block/carved_pumpkin.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "jack_o_lantern",
+    "name": "Jack o'Lantern",
+    "path": "assets/minecraft/textures/block/jack_o_lantern.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "nether_wart_stage_0",
+    "name": "Nether Wart (Stage 0)",
+    "path": "assets/minecraft/textures/block/nether_wart_stage_0.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "brewing_stand",
+    "name": "Brewing Stand",
+    "path": "assets/minecraft/textures/block/brewing_stand.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "cauldron_side",
+    "name": "Cauldron (Side)",
+    "path": "assets/minecraft/textures/block/cauldron_side.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "enchanting_table_top",
+    "name": "Enchanting Table (Top)",
+    "path": "assets/minecraft/textures/block/enchanting_table_top.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "end_portal_frame_top",
+    "name": "End Portal Frame (Top)",
+    "path": "assets/minecraft/textures/block/end_portal_frame_top.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "end_portal_frame_eye",
+    "name": "End Portal Frame (Eye)",
+    "path": "assets/minecraft/textures/block/end_portal_frame_eye.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "cocoa_stage_0",
+    "name": "Cocoa (Stage 0)",
+    "path": "assets/minecraft/textures/block/cocoa_stage_0.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "cocoa_stage_2",
+    "name": "Cocoa (Stage 2)",
+    "path": "assets/minecraft/textures/block/cocoa_stage_2.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "emerald_ore_alt",
+    "name": "Emerald Ore (Alt)",
+    "path": "assets/minecraft/textures/block/emerald_ore_alt.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "prismarine_rough",
+    "name": "Prismarine (Rough)",
+    "path": "assets/minecraft/textures/block/prismarine_rough.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "prismarine_bricks",
+    "name": "Prismarine Bricks",
+    "path": "assets/minecraft/textures/block/prismarine_bricks.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "dark_prismarine",
+    "name": "Dark Prismarine",
+    "path": "assets/minecraft/textures/block/dark_prismarine.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "sea_lantern",
+    "name": "Sea Lantern",
+    "path": "assets/minecraft/textures/block/sea_lantern.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "sponge",
+    "name": "Sponge",
+    "path": "assets/minecraft/textures/block/sponge.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "wet_sponge",
+    "name": "Wet Sponge",
+    "path": "assets/minecraft/textures/block/wet_sponge.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "slime_block",
+    "name": "Slime Block",
+    "path": "assets/minecraft/textures/block/slime_block.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "white_stained_glass_pane_top",
+    "name": "White Stained Glass Pane (Top)",
+    "path": "assets/minecraft/textures/block/white_stained_glass_pane_top.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "magenta_glazed_terracotta",
+    "name": "Magenta Glazed Terracotta",
+    "path": "assets/minecraft/textures/block/magenta_glazed_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "black_glazed_terracotta",
+    "name": "Black Glazed Terracotta",
+    "path": "assets/minecraft/textures/block/black_glazed_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "white_glazed_terracotta",
+    "name": "White Glazed Terracotta",
+    "path": "assets/minecraft/textures/block/white_glazed_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "orange_glazed_terracotta",
+    "name": "Orange Glazed Terracotta",
+    "path": "assets/minecraft/textures/block/orange_glazed_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "yellow_glazed_terracotta",
+    "name": "Yellow Glazed Terracotta",
+    "path": "assets/minecraft/textures/block/yellow_glazed_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "lime_glazed_terracotta",
+    "name": "Lime Glazed Terracotta",
+    "path": "assets/minecraft/textures/block/lime_glazed_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "pink_glazed_terracotta",
+    "name": "Pink Glazed Terracotta",
+    "path": "assets/minecraft/textures/block/pink_glazed_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "gray_glazed_terracotta",
+    "name": "Gray Glazed Terracotta",
+    "path": "assets/minecraft/textures/block/gray_glazed_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "light_gray_glazed_terracotta",
+    "name": "Light Gray Glazed Terracotta",
+    "path": "assets/minecraft/textures/block/light_gray_glazed_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "cyan_glazed_terracotta",
+    "name": "Cyan Glazed Terracotta",
+    "path": "assets/minecraft/textures/block/cyan_glazed_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "purple_glazed_terracotta",
+    "name": "Purple Glazed Terracotta",
+    "path": "assets/minecraft/textures/block/purple_glazed_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "blue_glazed_terracotta",
+    "name": "Blue Glazed Terracotta",
+    "path": "assets/minecraft/textures/block/blue_glazed_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "brown_glazed_terracotta",
+    "name": "Brown Glazed Terracotta",
+    "path": "assets/minecraft/textures/block/brown_glazed_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "green_glazed_terracotta",
+    "name": "Green Glazed Terracotta",
+    "path": "assets/minecraft/textures/block/green_glazed_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "red_glazed_terracotta",
+    "name": "Red Glazed Terracotta",
+    "path": "assets/minecraft/textures/block/red_glazed_terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "bone_block_side",
+    "name": "Bone Block (Side)",
+    "path": "assets/minecraft/textures/block/bone_block_side.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "bone_block_top",
+    "name": "Bone Block (Top)",
+    "path": "assets/minecraft/textures/block/bone_block_top.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "white_shulker_box",
+    "name": "White Shulker Box",
+    "path": "assets/minecraft/textures/block/white_shulker_box.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "purple_shulker_box",
+    "name": "Purple Shulker Box",
+    "path": "assets/minecraft/textures/block/purple_shulker_box.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "structure_block",
+    "name": "Structure Block",
+    "path": "assets/minecraft/textures/block/structure_block.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "structure_block_corner",
+    "name": "Structure Block (Corner)",
+    "path": "assets/minecraft/textures/block/structure_block_corner.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "barrier",
+    "name": "Barrier",
+    "path": "assets/minecraft/textures/block/barrier.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "observer_top",
+    "name": "Observer (Top)",
+    "path": "assets/minecraft/textures/block/observer_top.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "observer_side",
+    "name": "Observer (Side)",
+    "path": "assets/minecraft/textures/block/observer_side.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "red_nether_bricks",
+    "name": "Red Nether Bricks",
+    "path": "assets/minecraft/textures/block/red_nether_bricks.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "nether_wart_block",
+    "name": "Nether Wart Block",
+    "path": "assets/minecraft/textures/block/nether_wart_block.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "magma",
+    "name": "Magma",
+    "path": "assets/minecraft/textures/block/magma.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "terracotta",
+    "name": "Terracotta",
+    "path": "assets/minecraft/textures/block/terracotta.png",
+    "size": 16,
+    "category": "block"
+  },
+  {
+    "id": "birch_leaves_alt",
+    "name": "Birch Leaves (Alt)",
+    "path": "assets/minecraft/textures/block/birch_leaves_alt.png",
+    "size": 16,
+    "category": "block"
+  }
+]
