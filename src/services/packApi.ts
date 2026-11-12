@@ -68,6 +68,9 @@ export const packApi = {
   async createFolder(root: string, relPath: string): Promise<OpenPack> {
     return unwrap(await window.api.pack.createFolder({ root, relPath }));
   },
+  async deleteEntry(root: string, relPath: string): Promise<OpenPack> {
+    return unwrap(await window.api.pack.deleteEntry({ root, relPath }));
+  },
   async inspectAnimation(root: string, relPath: string): Promise<TextureAnimationInfo> {
     return unwrap(await window.api.pack.inspectAnimation({ root, relPath }));
   },

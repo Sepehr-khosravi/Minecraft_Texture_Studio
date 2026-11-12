@@ -46,6 +46,7 @@ const api = {
     createAnimatedTexture: (payload: unknown) =>
       ipcRenderer.invoke('pack:createAnimatedTexture', payload),
     createFolder: (payload: unknown) => ipcRenderer.invoke('pack:createFolder', payload),
+    deleteEntry: (payload: unknown) => ipcRenderer.invoke('pack:deleteEntry', payload),
     inspectAnimation: (payload: { root: string; relPath: string }) =>
       ipcRenderer.invoke('pack:inspectAnimation', payload),
     writeAnimation: (payload: unknown) => ipcRenderer.invoke('pack:writeAnimation', payload),

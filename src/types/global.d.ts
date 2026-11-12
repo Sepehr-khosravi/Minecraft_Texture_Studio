@@ -59,6 +59,7 @@ export interface RendererApi {
       interpolate: boolean;
     }): Promise<ApiResponse<OpenPack>>;
     createFolder(payload: { root: string; relPath: string }): Promise<ApiResponse<OpenPack>>;
+    deleteEntry(payload: { root: string; relPath: string }): Promise<ApiResponse<OpenPack>>;
     inspectAnimation(payload: {
       root: string;
       relPath: string;

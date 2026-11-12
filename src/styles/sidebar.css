@@ -106,3 +106,37 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+/* Hover-reveal delete button on tree rows */
+.tree-row-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.tree-row-wrap .tree-row {
+  flex: 1;
+  min-width: 0;
+}
+.tree-delete-btn {
+  position: absolute;
+  right: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 22px;
+  height: 22px;
+  display: none;
+  place-items: center;
+  border: none;
+  border-radius: var(--radius-xs);
+  background: var(--surface-3);
+  color: var(--text-tertiary);
+  cursor: pointer;
+  transition: background 100ms ease, color 100ms ease;
+}
+.tree-row-wrap:hover .tree-delete-btn {
+  display: grid;
+}
+.tree-delete-btn:hover {
+  background: var(--danger-soft);
+  color: var(--danger);
+}

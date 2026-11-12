@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import {
-  Blocks, Download, Files, Home, LayoutGrid, Plus, Settings2,
+  Blocks, Download, Files, Home, LayoutGrid, Plus, Settings2, Trash2,
 } from 'lucide-react';
 import { WindowControls } from './components/layout/WindowControls';
 import { LeftSidebar } from './components/layout/LeftSidebar';
@@ -36,6 +36,9 @@ export default function App() {
   const [galleryKey, setGalleryKey] = useState(0);
   const [libraryKey, setLibraryKey] = useState(0);
   const [view, setView] = useState<View>('files');
+  const [deleteTarget, setDeleteTarget] = useState<{ path: string; name: string } | null>(null);
+  const [deleteBusy, setDeleteBusy] = useState(false);
+  const [deleteError, setDeleteError] = useState<string | null>(null);
 
   const { pack, status, error, createNew, openExisting, closePack, clearError, applyPack } = usePack();
   const busy = status === 'busy';
@@ -135,19 +138,15 @@ export default function App() {
       applyPack(updated);
       setGalleryKey((k) => k + 1);
 
-      // ⚠ FIX: query the real dimensions from disk — do not trust `entry.size`
-      // or compute height from `entry.frames`. The file on disk is authoritative.
       let real: TextureEntry | null = null;
       try {
         const list = await packApi.listTextures(updated.root, updated.tree);
         const hit = list.find((e) => e.path === entry.path);
         if (hit) real = hit;
       } catch {
-        // fall through to the fallback below
+        /* ignore */
       }
       if (!real) {
-        // Fallback: read the tree node; we still cannot read dims from tree,
-        // so use the pack's declared size only if no better option exists.
         real = {
           path: entry.path,
           name: entry.path.split('/').pop() ?? entry.id,
@@ -161,6 +160,31 @@ export default function App() {
       setEditingEntry(real);
     } catch (err) {
       alert(err instanceof Error ? err.message : 'Failed to create texture.');
+    }
+  };
+
+  const handleRequestDelete = (path: string) => {
+    if (!pack) return;
+    const name = path.split('/').pop() ?? path;
+    setDeleteError(null);
+    setDeleteTarget({ path, name });
+  };
+
+  const handleConfirmDelete = async () => {
+    if (!pack || !deleteTarget) return;
+    setDeleteBusy(true);
+    setDeleteError(null);
+    try {
+      const updated = await packApi.deleteEntry(pack.root, deleteTarget.path);
+      applyPack(updated);
+      if (editingEntry?.path === deleteTarget.path) setEditingEntry(null);
+      if (selectedPath === deleteTarget.path) setSelectedPath(null);
+      setGalleryKey((k) => k + 1);
+      setDeleteTarget(null);
+    } catch (err) {
+      setDeleteError(err instanceof Error ? err.message : 'Failed to delete.');
+    } finally {
+      setDeleteBusy(false);
     }
   };
 
@@ -212,6 +236,7 @@ export default function App() {
             pack={pack}
             onFileSelect={handleFileSelect}
             selectedPath={selectedPath}
+            onRequestDelete={handleRequestDelete}
           />
         )}
 
@@ -297,6 +322,7 @@ export default function App() {
                       setNewTextureError(null);
                       setShowNewTexture(true);
                     }}
+                    onRequestDelete={handleRequestDelete}
                   />
                 </ErrorBoundary>
               )}
@@ -342,6 +368,47 @@ export default function App() {
           onCancel={() => setShowNewTexture(false)}
           onCreate={handleCreateTexture}
         />
+      )}
+
+      {deleteTarget && (
+        <div className="modal-backdrop" onMouseDown={() => !deleteBusy && setDeleteTarget(null)}>
+          <div className="modal-card" onMouseDown={(e) => e.stopPropagation()}>
+            <header className="modal-header">
+              <h3 style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
+                <Trash2 size={16} /> Delete "{deleteTarget.name}"
+              </h3>
+            </header>
+            <div className="modal-body">
+              <p style={{ margin: 0, color: 'var(--text-secondary)', fontSize: 13, lineHeight: 1.55 }}>
+                This will permanently remove <code>{deleteTarget.path}</code> from the pack.
+                {deleteTarget.path.endsWith('.png') && (
+                  <> A sibling <code>.mcmeta</code> (if any) will also be removed.</>
+                )}
+              </p>
+              <p style={{ margin: 0, color: 'var(--danger)', fontSize: 12.5 }}>
+                This cannot be undone.
+              </p>
+              {deleteError && <div className="form-error">{deleteError}</div>}
+            </div>
+            <footer className="modal-footer">
+              <button
+                className="toolbar-btn"
+                onClick={() => setDeleteTarget(null)}
+                disabled={deleteBusy}
+              >
+                Cancel
+              </button>
+              <button
+                className="toolbar-btn"
+                style={{ background: 'var(--danger)', borderColor: 'var(--danger)', color: '#fff' }}
+                onClick={handleConfirmDelete}
+                disabled={deleteBusy}
+              >
+                {deleteBusy ? 'Deleting…' : 'Delete'}
+              </button>
+            </footer>
+          </div>
+        </div>
       )}
     </div>
   );

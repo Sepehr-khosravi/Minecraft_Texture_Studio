@@ -19,6 +19,7 @@ import {
   createEmptyTexture,
   createAnimatedTexture,
   createFolder,
+  deleteEntry,
 } from '../services/packService.js';
 import {
   inspectTextureAnimation,
@@ -141,7 +142,7 @@ export function registerFsHandlers(): void {
               category,
             });
           } catch {
-            /* ignore */
+            // ignore
           }
         }
         if (n.children) {
@@ -230,6 +231,15 @@ export function registerFsHandlers(): void {
     async (_evt, payload: { root: string; relPath: string }): Promise<ApiResponse<OpenPack>> =>
       wrap<OpenPack>(async () => {
         await createFolder(payload.root, payload.relPath);
+        return openPack(payload.root);
+      })
+  );
+
+  ipcMain.handle(
+    'pack:deleteEntry',
+    async (_evt, payload: { root: string; relPath: string }): Promise<ApiResponse<OpenPack>> =>
+      wrap<OpenPack>(async () => {
+        await deleteEntry(payload.root, payload.relPath);
         return openPack(payload.root);
       })
   );
