@@ -1,0 +1,318 @@
+/* ─────────────────────────────────────────────────────
+   Skin Editor — copper accent, scoped to Skin Studio
+   ───────────────────────────────────────────────────── */
+
+.skin-editor {
+  --skin-accent: #e0a526;
+  --skin-accent-hover: #f0b637;
+  --skin-accent-soft: rgba(224, 165, 38, 0.14);
+  --skin-accent-ring: rgba(224, 165, 38, 0.35);
+
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  height: 100%;
+  min-height: 0;
+  background: var(--surface-0);
+  color: var(--text-primary);
+}
+
+/* Topbar */
+.skin-editor-topbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: linear-gradient(180deg, #1c1a14 0%, var(--surface-1) 100%);
+  border-bottom: 1px solid var(--border-subtle);
+  min-height: 48px;
+}
+.skin-editor-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 120ms ease, color 120ms ease;
+}
+.skin-editor-back:hover { background: var(--surface-3); color: var(--text-primary); }
+.skin-editor-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 10px;
+  border-left: 1px solid var(--border-subtle);
+}
+.skin-editor-title-name {
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+.skin-model-badge {
+  font-size: 10.5px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+}
+.skin-model-badge-steve {
+  background: var(--skin-accent-soft);
+  color: var(--skin-accent);
+  border-color: rgba(224, 165, 38, 0.3);
+}
+.skin-model-badge-alex {
+  background: rgba(74, 184, 224, 0.14);
+  color: var(--info);
+  border-color: rgba(74, 184, 224, 0.3);
+}
+.skin-editor-spacer { flex: 1; }
+.skin-icon-btn {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  background: transparent;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+}
+.skin-icon-btn:hover:not(:disabled) { background: var(--surface-3); color: var(--text-primary); }
+.skin-icon-btn.active {
+  background: var(--skin-accent-soft);
+  color: var(--skin-accent);
+  border-color: var(--skin-accent);
+}
+.skin-icon-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+.skin-save-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 32px;
+  padding: 0 16px;
+  border: 1px solid var(--skin-accent);
+  border-radius: var(--radius-sm);
+  background: var(--skin-accent);
+  color: #1a1d21;
+  font-size: 12.5px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 120ms ease, box-shadow 120ms ease;
+}
+.skin-save-btn:hover:not(:disabled) { background: var(--skin-accent-hover); }
+.skin-save-btn.dirty { box-shadow: 0 0 0 3px var(--skin-accent-ring); }
+.skin-save-btn:disabled { opacity: 0.6; cursor: not-allowed; }
+
+/* Body: tool rail + canvas */
+.skin-editor-body {
+  display: flex;
+  min-height: 0;
+  overflow: hidden;
+}
+.skin-tool-rail {
+  width: 52px;
+  background: var(--surface-1);
+  border-right: 1px solid var(--border-subtle);
+  padding: 12px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  flex-shrink: 0;
+}
+.skin-tool-btn {
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 120ms ease, color 120ms ease, border-color 120ms ease;
+}
+.skin-tool-btn:hover:not(:disabled) { background: var(--surface-3); color: var(--text-primary); }
+.skin-tool-btn.active {
+  background: var(--skin-accent-soft);
+  color: var(--skin-accent);
+  border-color: var(--skin-accent);
+}
+.skin-tool-divider {
+  width: 24px;
+  height: 1px;
+  background: var(--border-subtle);
+  margin: 6px 0;
+}
+.skin-brush-dot {
+  display: block;
+  background: currentColor;
+  border-radius: 50%;
+}
+.skin-color-pick {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  overflow: hidden;
+  background:
+    linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%) 0 0 / 8px 8px,
+    linear-gradient(45deg, #444 25%, transparent 25%, transparent 75%, #444 75%) 4px 4px / 8px 8px,
+    #222;
+}
+.skin-color-pick input[type="color"] {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  cursor: pointer;
+  padding: 0;
+  border: none;
+}
+.skin-color-pick span {
+  position: absolute;
+  inset: 4px;
+  border-radius: 3px;
+  border: 1px solid rgba(0, 0, 0, 0.35);
+  pointer-events: none;
+}
+
+/* Canvas */
+.skin-canvas-area {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(224, 165, 38, 0.05), transparent 55%),
+    var(--surface-0);
+  touch-action: none;
+  user-select: none;
+}
+.skin-canvas-wrap {
+  position: relative;
+}
+.skin-canvas {
+  display: block;
+  background-color: #2a2f37;
+  background-image:
+    linear-gradient(45deg, #3a4049 25%, transparent 25%, transparent 75%, #3a4049 75%),
+    linear-gradient(45deg, #3a4049 25%, transparent 25%, transparent 75%, #3a4049 75%);
+  background-size: 16px 16px;
+  background-position: 0 0, 8px 8px;
+  image-rendering: pixelated;
+  box-shadow:
+    0 16px 56px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+.skin-uv-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.skin-uv-rect {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.28);
+  stroke-width: 0.08;
+}
+.skin-uv-rect.overlay {
+  stroke: rgba(224, 165, 38, 0.42);
+  stroke-dasharray: 0.4 0.4;
+}
+.skin-zoom-hud {
+  position: absolute;
+  bottom: 14px;
+  right: 14px;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  padding: 3px;
+  background: rgba(20, 23, 28, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+}
+.skin-zoom-hud button {
+  width: 26px;
+  height: 26px;
+  display: grid;
+  place-items: center;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  border-radius: var(--radius-xs);
+  cursor: pointer;
+}
+.skin-zoom-hud button:hover { background: var(--surface-3); color: var(--text-primary); }
+.skin-zoom-hud span {
+  min-width: 34px;
+  text-align: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+/* Loading / errors */
+.skin-editor-loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-secondary);
+}
+.skin-editor-error {
+  padding: 10px 14px;
+  background: var(--danger-soft);
+  color: var(--danger);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(229, 83, 75, 0.3);
+  font-size: 12px;
+  margin: 20px;
+}
+
+/* Statusbar */
+.skin-editor-statusbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 5px 14px;
+  background: var(--surface-1);
+  border-top: 1px solid var(--border-subtle);
+  font-size: 10.5px;
+  color: var(--text-tertiary);
+  font-family: var(--font-mono);
+}
+.skin-editor-status-spacer { flex: 1; }
+.skin-editor-status-path {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 55%;
+}
+.skin-editor-dirty { color: var(--skin-accent); font-weight: 600; }
+/* 3D viewer layout */
+.skin-editor-viewer {
+  flex: 1;
+  min-height: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.skin-editor-hint {
+  color: var(--text-tertiary);
+  font-style: italic;
+}

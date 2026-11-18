@@ -23,6 +23,9 @@ const DEFAULT_SKELETON = [
 const TEXTURE_EXTS = new Set(['png']);
 const HIDDEN_NAMES = new Set(['.DS_Store', 'Thumbs.db']);
 
+/** Files that must never be deleted — they break the pack if missing. */
+const PROTECTED_FILES = new Set(['pack.mcmeta', 'pack.png']);
+
 export function resolveInside(root: string, rel: string): string {
   const rootAbs = path.resolve(root);
   const target = path.resolve(rootAbs, rel);
@@ -238,13 +241,6 @@ export async function createEmptyTexture(
   await fs.writeFile(dest, bytes);
 }
 
-/**
- * Create an animated texture: a tall PNG plus a matching .png.mcmeta.
- * `frameWidth` × `frameCount * frameHeight` is the final PNG size.
- * All frames start as fully transparent.
- * If `meta` is provided, it is written to the .mcmeta file; otherwise a
- * minimal one (`frametime: 1`) is generated.
- */
 export async function createAnimatedTexture(
   root: string,
   relPath: string,
@@ -298,6 +294,45 @@ export async function createFolder(root: string, relPath: string): Promise<void>
   if (!relPath || relPath.trim() === '') throw new Error('Folder path is empty.');
   const dest = resolveInside(root, relPath);
   await fs.mkdir(dest, { recursive: true });
+}
+
+/**
+ * Delete a file or folder inside the pack.
+ * - Rejects protected files (pack.mcmeta, pack.png at root).
+ * - Rejects deleting the pack root itself.
+ * - For animated PNGs, also removes the sibling .mcmeta if present.
+ * - For folders, deletes recursively.
+ */
+export async function deleteEntry(root: string, relPath: string): Promise<void> {
+  const norm = relPath.replace(/\\/g, '/').replace(/^\/+|\/+$/g, '');
+  if (!norm) throw new Error('Cannot delete the pack root.');
+
+  const abs = resolveInside(root, norm);
+  const stat = await fs.stat(abs);
+
+  if (stat.isDirectory()) {
+    // Folder delete: refuse if it's the pack root (already checked) — safe otherwise.
+    await fs.rm(abs, { recursive: true, force: true });
+    return;
+  }
+
+  // File delete.
+  const basename = path.basename(norm);
+  if (PROTECTED_FILES.has(basename) && !norm.includes('/')) {
+    throw new Error(`Cannot delete ${basename} — it's required by Minecraft.`);
+  }
+
+  await fs.rm(abs, { force: true });
+
+  // Clean up orphaned animation metadata.
+  if (norm.toLowerCase().endsWith('.png')) {
+    const mcmetaAbs = resolveInside(root, `${norm}.mcmeta`);
+    try {
+      await fs.rm(mcmetaAbs, { force: true });
+    } catch {
+      // No sibling — fine.
+    }
+  }
 }
 
 function buildEmptyPngBytes(

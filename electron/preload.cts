@@ -46,6 +46,7 @@ const api = {
     createAnimatedTexture: (payload: unknown) =>
       ipcRenderer.invoke('pack:createAnimatedTexture', payload),
     createFolder: (payload: unknown) => ipcRenderer.invoke('pack:createFolder', payload),
+    deleteEntry: (payload: unknown) => ipcRenderer.invoke('pack:deleteEntry', payload),
     inspectAnimation: (payload: { root: string; relPath: string }) =>
       ipcRenderer.invoke('pack:inspectAnimation', payload),
     writeAnimation: (payload: unknown) => ipcRenderer.invoke('pack:writeAnimation', payload),
@@ -53,6 +54,15 @@ const api = {
     importZip: (payload: { zipPath: string; name: string }) =>
       ipcRenderer.invoke('pack:importZip', payload),
     pickZipFile: (): Promise<string | null> => ipcRenderer.invoke('pack:pickZipFile'),
+  },
+  skin: {
+    blank: (): Promise<Uint8Array> => ipcRenderer.invoke('skin:blank'),
+    pickAndRead: (): Promise<Uint8Array | null> => ipcRenderer.invoke('skin:pickAndRead'),
+    download: (payload: { bytes: Uint8Array; suggestedName: string }) =>
+      ipcRenderer.invoke('skin:download', payload),
+    readFile: (absPath: string) => ipcRenderer.invoke('skin:readFile', absPath),
+    writeFile: (payload: { absPath: string; bytes: Uint8Array }) =>
+      ipcRenderer.invoke('skin:writeFile', payload),
   },
 } as const;
 

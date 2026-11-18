@@ -174,3 +174,69 @@
   backdrop-filter: blur(2px);
 }
 .gallery-drop-overlay p { margin: 0; font-size: 13px; }
+
+/* Hover-reveal delete button on gallery thumbs */
+.texture-thumb-wrap {
+  position: relative;
+}
+.texture-thumb-wrap .texture-thumb {
+  width: 100%;
+}
+.texture-thumb-delete {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 22px;
+  height: 22px;
+  display: none;
+  place-items: center;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xs);
+  background: rgba(20, 23, 28, 0.85);
+  backdrop-filter: blur(4px);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 100ms ease, color 100ms ease;
+  z-index: 2;
+}
+.texture-thumb-wrap:hover .texture-thumb-delete {
+  display: grid;
+}
+.texture-thumb-delete:hover {
+  background: var(--danger);
+  color: #fff;
+  border-color: var(--danger);
+}
+
+/* Hover-reveal delete button on gallery thumbs */
+.texture-thumb-wrap {
+  position: relative;
+}
+.texture-thumb-wrap .texture-thumb {
+  width: 100%;
+}
+.texture-thumb-delete {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 22px;
+  height: 22px;
+  display: none;
+  place-items: center;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xs);
+  background: rgba(20, 23, 28, 0.85);
+  backdrop-filter: blur(4px);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: background 100ms ease, color 100ms ease;
+  z-index: 2;
+}
+.texture-thumb-wrap:hover .texture-thumb-delete {
+  display: grid;
+}
+.texture-thumb-delete:hover {
+  background: var(--danger);
+  color: #fff;
+  border-color: var(--danger);
+}

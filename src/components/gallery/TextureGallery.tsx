@@ -11,6 +11,7 @@ interface TextureGalleryProps {
   onOpen(entry: TextureEntry): void;
   onPackChanged(): void;
   onNewTexture(): void;
+  onRequestDelete?: (path: string) => void;
 }
 
 const CATEGORIES: Array<{ id: TextureCategory | 'all'; label: string }> = [
@@ -31,6 +32,7 @@ export function TextureGallery({
   onOpen,
   onPackChanged,
   onNewTexture,
+  onRequestDelete,
 }: TextureGalleryProps) {
   const [entries, setEntries] = useState<TextureEntry[] | null>(null);
   const [category, setCategory] = useState<TextureCategory | 'all'>('all');
@@ -150,11 +152,7 @@ export function TextureGallery({
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        <button
-          className="toolbar-btn primary"
-          onClick={onNewTexture}
-          title="Create an empty texture"
-        >
+        <button className="toolbar-btn primary" onClick={onNewTexture}>
           <Plus size={14} /> New texture
         </button>
       </div>
@@ -187,6 +185,7 @@ export function TextureGallery({
               selected={selected?.path === entry.path}
               onSelect={handleSelect}
               onOpen={onOpen}
+              onRequestDelete={onRequestDelete}
             />
           ))}
         </div>

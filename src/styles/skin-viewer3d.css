@@ -1,0 +1,161 @@
+.skin-viewer-3d {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse at 50% 40%, rgba(224, 165, 38, 0.06), transparent 60%),
+    var(--surface-0);
+  overflow: hidden;
+  cursor: grab;
+}
+.skin-viewer-3d:active {
+  cursor: grabbing;
+}
+.skin-viewer-3d-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  outline: none;
+}
+/* Body parts panel (top-right of the 3D viewer) */
+.skin-parts-panel {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  width: 180px;
+  max-height: calc(100% - 28px);
+  overflow-y: auto;
+  background: rgba(20, 23, 28, 0.92);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  padding: 10px;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  z-index: 10;
+}
+.skin-parts-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 6px;
+  margin-bottom: 4px;
+  border-bottom: 1px solid var(--border-subtle);
+  font-size: 10.5px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+}
+.skin-parts-grid-toggle {
+  padding: 2px 8px;
+  border-radius: var(--radius-xs);
+  border: 1px solid var(--border-default);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 10px;
+  cursor: pointer;
+}
+.skin-parts-grid-toggle.active {
+  background: var(--skin-accent-soft, rgba(224, 165, 38, 0.14));
+  color: var(--skin-accent, #e0a526);
+  border-color: var(--skin-accent, #e0a526);
+}
+.skin-part-toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 3px 4px;
+  border-radius: var(--radius-xs);
+  font-size: 11.5px;
+  color: var(--text-secondary);
+  cursor: pointer;
+}
+.skin-part-toggle:hover {
+  background: var(--surface-3);
+  color: var(--text-primary);
+}
+.skin-part-toggle input {
+  accent-color: var(--skin-accent, #e0a526);
+}
+
+
+/* Skin layer controls */
+.skin-layer-switch {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  padding: 3px;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  background: var(--surface-1);
+}
+.skin-layer-btn {
+  min-width: 58px;
+  height: 27px;
+  padding: 0 9px;
+  border: 1px solid transparent;
+  border-radius: var(--radius-xs);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 11px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.skin-layer-btn:hover { background: var(--surface-3); color: var(--text-primary); }
+.skin-layer-btn.active {
+  color: var(--skin-accent, #e0a526);
+  background: var(--skin-accent-soft, rgba(224,165,38,.14));
+  border-color: var(--skin-accent, #e0a526);
+}
+.skin-parts-title {
+  padding-bottom: 7px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-tertiary);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .7px;
+  text-transform: uppercase;
+}
+.skin-part-row {
+  display: grid;
+  grid-template-columns: minmax(58px, 1fr) auto auto;
+  align-items: center;
+  gap: 5px;
+  padding: 4px 2px;
+  border-radius: var(--radius-xs);
+}
+.skin-part-row:hover { background: var(--surface-3); }
+.skin-part-label {
+  overflow: hidden;
+  color: var(--text-secondary);
+  font-size: 10.5px;
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+}
+.skin-part-toggle {
+  gap: 3px;
+  padding: 2px;
+  font-size: 9.5px;
+}
+.skin-part-toggle input { width: 12px; height: 12px; margin: 0; }
+@media (max-width: 760px) {
+  .skin-parts-panel { width: 155px; right: 8px; top: 8px; padding: 7px; }
+  .skin-layer-btn { min-width: 48px; padding: 0 6px; }
+}
+
+
+/* The pixel grid is part of the temporary model preview, not a mouse cursor. */
+.skin-viewer-3d-canvas {
+  cursor: default;
+}
+.skin-viewer-3d.is-rotating,
+.skin-viewer-3d.is-rotating .skin-viewer-3d-canvas {
+  cursor: grabbing;
+}
