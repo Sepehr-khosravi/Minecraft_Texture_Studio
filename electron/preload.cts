@@ -55,6 +55,15 @@ const api = {
       ipcRenderer.invoke('pack:importZip', payload),
     pickZipFile: (): Promise<string | null> => ipcRenderer.invoke('pack:pickZipFile'),
   },
+  skin: {
+    blank: (): Promise<Uint8Array> => ipcRenderer.invoke('skin:blank'),
+    pickAndRead: (): Promise<Uint8Array | null> => ipcRenderer.invoke('skin:pickAndRead'),
+    download: (payload: { bytes: Uint8Array; suggestedName: string }) =>
+      ipcRenderer.invoke('skin:download', payload),
+    readFile: (absPath: string) => ipcRenderer.invoke('skin:readFile', absPath),
+    writeFile: (payload: { absPath: string; bytes: Uint8Array }) =>
+      ipcRenderer.invoke('skin:writeFile', payload),
+  },
 } as const;
 
 contextBridge.exposeInMainWorld('api', api);

@@ -12,6 +12,14 @@ import type {
   TextureEntry,
 } from '@shared/types/pack';
 
+export interface SkinEntry {
+  id: string;
+  fileName: string;
+  path: string;
+  modifiedAt: string;
+  sizeBytes: number;
+}
+
 export interface RendererApi {
   app: {
     getVersion(): Promise<string>;
@@ -72,6 +80,13 @@ export interface RendererApi {
     exportZip(root: string): Promise<ApiResponse<{ bytes: number; files: number } | null>>;
     importZip(payload: { zipPath: string; name: string }): Promise<ApiResponse<OpenPack>>;
     pickZipFile(): Promise<string | null>;
+  };
+  skin: {
+    blank(): Promise<Uint8Array>;
+    pickAndRead(): Promise<Uint8Array | null>;
+    download(payload: { bytes: Uint8Array; suggestedName: string }): Promise<string | null>;
+    readFile(absPath: string): Promise<ApiResponse<Uint8Array>>;
+    writeFile(payload: { absPath: string; bytes: Uint8Array }): Promise<ApiResponse<void>>;
   };
 }
 
