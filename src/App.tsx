@@ -112,22 +112,61 @@ export default function App() {
       applyPack(updated); setShowNewTexture(false); setGalleryKey((k) => k + 1);
     } catch (err) { setNewTextureError(err instanceof Error ? err.message : 'Failed to create texture.'); }
   };
-
-  const handleCatalogCreate = async (entry: { id: string; name: string; path: string; size: number; frames?: number }) => {
+  const handleCatalogCreate = async (entry: {
+    id: string;
+    name: string;
+    path: string;
+    size: number;
+    frames?: number;
+    imageUrl?: string;
+    downloadUrl?: string;
+  }) => {
     if (!pack) return;
     try {
-      let updated;
-      if (entry.frames && entry.frames > 1) {
-        updated = await packApi.createAnimatedTexture({ root: pack.root, relPath: entry.path, frameWidth: entry.size, frameHeight: entry.size, frameCount: entry.frames, frametime: 1, interpolate: false });
-      } else {
-        updated = await packApi.createTexture({ root: pack.root, relPath: entry.path, width: entry.size, height: entry.size, fill: 'transparent' });
-      }
-      applyPack(updated); setGalleryKey((k) => k + 1);
+      // 1. ساخت مسیر کامل لوکال با BASE_URL
+      const baseUrl = import.meta.env.BASE_URL;
+      const localUrl = entry.downloadUrl || entry.imageUrl || '';
+      const fullUrl = `${baseUrl}${localUrl.replace(/^\//, '')}`;
+      
+      // 2. خواندن فایل از مسیر لوکال
+      const response = await fetch(fullUrl);
+      if (!response.ok) throw new Error('Could not fetch texture file.');
+      const arrayBuffer = await response.arrayBuffer();
+      const bytes = new Uint8Array(arrayBuffer);
+  
+      // 3. نوشتن فایل در پک
+      await packApi.writeTexture(pack.root, entry.path, bytes);
+      
+      // 4. رفرش کردن پک
+      const updated = await packApi.open(pack.root);
+      applyPack(updated);
+      setGalleryKey((k) => k + 1);
+  
+      // 5. باز کردن در ادیتور
       let real: TextureEntry | null = null;
-      try { const list = await packApi.listTextures(updated.root, updated.tree); const hit = list.find((e) => e.path === entry.path); if (hit) real = hit; } catch { /* ignore */ }
-      if (!real) real = { path: entry.path, name: entry.path.split('/').pop() ?? entry.id, width: entry.size, height: entry.frames ? entry.size * entry.frames : entry.size, sizeBytes: 0, category: 'block' };
-      setView('files'); setEditingEntry(real);
-    } catch (err) { alert(err instanceof Error ? err.message : 'Failed to create texture.'); }
+      try {
+        const list = await packApi.listTextures(updated.root, updated.tree);
+        const hit = list.find((e) => e.path === entry.path);
+        if (hit) real = hit;
+      } catch { /* ignore */ }
+      
+      if (!real) {
+        real = {
+          path: entry.path,
+          name: entry.path.split('/').pop() ?? entry.id,
+          width: entry.size,
+          height: entry.size,
+          sizeBytes: 0,
+          category: 'block',
+        };
+      }
+      
+      setView('files');
+      setEditingEntry(real);
+      
+    } catch (err) {
+      alert(err instanceof Error ? err.message : 'Failed to copy texture from local assets.');
+    }
   };
 
   const handleRequestDelete = (path: string) => { if (!pack) return; const name = path.split('/').pop() ?? path; setDeleteError(null); setDeleteTarget({ path, name }); };

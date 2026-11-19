@@ -9,7 +9,15 @@ type Filter = 'all' | 'missing' | 'present';
 interface CatalogBrowserProps {
   pack: OpenPack;
   disabled: boolean;
-  onCreate(entry: { id: string; name: string; path: string; size: number; frames?: number }): void;
+  onCreate(entry: {
+    id: string;
+    name: string;
+    path: string;
+    size: number;
+    frames?: number;
+    imageUrl?: string;
+    downloadUrl?: string;
+  }): void;
 }
 
 export function CatalogBrowser({ pack, disabled, onCreate }: CatalogBrowserProps) {
@@ -111,18 +119,31 @@ export function CatalogBrowser({ pack, disabled, onCreate }: CatalogBrowserProps
               key={entry.id}
               className={`catalog-card${present ? ' catalog-card-present' : ''}`}
             >
-              <div className="catalog-card-icon">
-                {present ? <Check size={18} /> : <ImageIcon size={18} />}
+              <div className="catalog-card-thumb">
+                {entry.imageUrl ? (
+                  <img
+                    src={`${import.meta.env.BASE_URL}${entry.imageUrl.replace(/^\//, '')}`}
+                    alt={entry.name}
+                    loading="lazy"
+                    className="catalog-thumb-img"
+                  />
+                ) : (
+                  <ImageIcon size={20} className="catalog-thumb-placeholder" />
+                )}
               </div>
+
               <div className="catalog-card-info">
-                <span className="catalog-card-name">{entry.name}</span>
+                <span className="catalog-card-name" title={entry.name}>{entry.name}</span>
                 <span className="catalog-card-meta">
                   {entry.size}×{entry.size}
-                  {entry.frames ? ` · ${entry.frames} frames` : ''}
+                  {entry.frames ? ` · ${entry.frames}f` : ''}
                 </span>
               </div>
+
               {present ? (
-                <span className="catalog-card-badge">In pack</span>
+                <span className="catalog-card-badge">
+                  <Check size={12} /> In pack
+                </span>
               ) : (
                 <button
                   className="toolbar-btn primary catalog-card-btn"
