@@ -1,7 +1,9 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
-  ChevronLeft, Maximize, Minus, Plus, Redo2, Save, Undo2, Eye, EyeOff, Film,
+  ChevronLeft, Maximize, Minus, Plus, Redo2, Save, Undo2, Eye, EyeOff, Film, Upload, Image as ImageIcon
 } from 'lucide-react';
+import imageCompression from 'browser-image-compression';
+import { parseGIF, decompressFrames } from 'gifuct-js';
 import type {
   AnimationMeta,
   OpenPack,
@@ -162,6 +164,7 @@ export function TextureEditor({ pack, entry, onClose, onSaved }: TextureEditorPr
     });
   }, []);
 
+  // ✅ FIXED: Removed history from dependency array to prevent infinite loop
   const reload = useCallback(async () => {
     let cancelled = false;
     setLoading(true);
@@ -242,12 +245,11 @@ export function TextureEditor({ pack, entry, onClose, onSaved }: TextureEditorPr
 
     return () => { cancelled = true; };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pack.root, entry.path]);
+  }, [pack.root, entry.path]); // Only depend on path, not history
 
   useEffect(() => {
     reload();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pack.root, entry.path]);
+  }, [reload]);
 
   useEffect(() => {
     render();
@@ -431,6 +433,98 @@ export function TextureEditor({ pack, entry, onClose, onSaved }: TextureEditorPr
     }
   }, [entry.path, onSaved, pack.root, refreshBlobUrl, saving]);
 
+  // -------- Import Image (Static) --------
+  const handleImportImage = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    try {
+      const options = { maxSizeMB: 0.1, maxWidthOrHeight: 16, useWebWorker: true };
+      const compressedBlob = await imageCompression(file, options);
+      
+      const img = new Image();
+      img.src = URL.createObjectURL(compressedBlob);
+      await img.decode();
+      
+      const targetW = canvasDims.w || 16;
+      const targetH = canvasDims.h || 16;
+      
+      const off = document.createElement('canvas');
+      off.width = targetW;
+      off.height = targetH;
+      const ctx = off.getContext('2d', { willReadFrequently: true });
+      if (!ctx) throw new Error('Canvas error');
+      
+      ctx.imageSmoothingEnabled = false;
+      ctx.drawImage(img, 0, 0, targetW, targetH);
+      
+      const data = ctx.getImageData(0, 0, targetW, targetH);
+      
+      const currentData = imageDataRef.current;
+      if (currentData) history.push(currentData);
+      
+      imageDataRef.current = data;
+      setCanvasDims({ w: targetW, h: targetH });
+      render();
+      setDirty(true);
+    } catch (err) {
+      alert('Failed to import image.');
+    }
+    e.target.value = '';
+  };
+
+  // -------- Import GIF (Animation) --------
+  const handleImportGif = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    try {
+      const buffer = await file.arrayBuffer();
+      const gif = parseGIF(buffer);
+      const frames = decompressFrames(gif, true);
+      
+      if (frames.length === 0) throw new Error("No frames found in GIF.");
+      
+      let totalHeight = 0;
+      frames.forEach(f => totalHeight += f.dims.height);
+      
+      const off = document.createElement('canvas');
+      off.width = frames[0].dims.width;
+      off.height = totalHeight;
+      const ctx = off.getContext('2d', { willReadFrequently: true });
+      if (!ctx) throw new Error('Canvas error');
+      
+      let currentY = 0;
+      frames.forEach(frame => {
+        const patchData = new ImageData(new Uint8ClampedArray(frame.patch), frame.dims.width, frame.dims.height);
+        ctx.putImageData(patchData, 0, currentY);
+        currentY += frame.dims.height;
+      });
+      
+      const data = ctx.getImageData(0, 0, off.width, off.height);
+      const currentData = imageDataRef.current;
+      if (currentData) history.push(currentData);
+      
+      imageDataRef.current = data;
+      setCanvasDims({ w: data.width, h: data.height });
+      render();
+      setDirty(true);
+      
+      const frameHeight = frames[0].dims.height;
+      setAnimationInfo({
+        hasAnimation: true,
+        frameCount: frames.length,
+        frameHeight,
+        meta: { frametime: 1, interpolate: false },
+        rawMeta: null
+      });
+      setAnimPanelOpen(true);
+      
+    } catch (err) {
+      alert('Failed to import GIF.');
+      console.error(err);
+    }
+    e.target.value = '';
+  };
+
   const handleAddFrame = useCallback(() => {
     const data = imageDataRef.current;
     if (!data) return;
@@ -588,6 +682,19 @@ export function TextureEditor({ pack, entry, onClose, onSaved }: TextureEditorPr
         <span className="editor-file-label" title={entry.path}>{entry.name}</span>
 
         <div className="editor-actions-spacer" />
+
+        {/* دکمه‌های وارد کردن عکس و گیف */}
+        <label className="editor-action-btn" style={{ cursor: 'pointer' }} title="Import Image (Converts to 16x16)">
+          <ImageIcon size={14} /> <span>Import Img</span>
+          <input type="file" accept="image/*" style={{ display: 'none' }} onChange={handleImportImage} />
+        </label>
+
+        <label className="editor-action-btn" style={{ cursor: 'pointer' }} title="Import GIF as Animation">
+          <Upload size={14} /> <span>Import GIF</span>
+          <input type="file" accept="image/gif" style={{ display: 'none' }} onChange={handleImportGif} />
+        </label>
+
+        <div className="editor-actions-divider" />
 
         {isAnimated && (
           <button
